@@ -24,11 +24,6 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "PluralWords", "PluralWords\
 		SlnRelativePath = "PluralWords\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
-	ProjectSection(ProjectDependencies) = postProject
-		{DA0CB70E-6973-42FE-86CD-17B426432533} = {DA0CB70E-6973-42FE-86CD-17B426432533}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Word_DLL", "Word_DLL\Word_DLL.csproj", "{DA0CB70E-6973-42FE-86CD-17B426432533}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{49782EC9-9EBD-4F53-AE4B-EB22B68AF6B1}"
 EndProject
@@ -42,10 +37,6 @@ Global
 		{F26FF085-D45E-430C-A9EA-11745A00E8B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F26FF085-D45E-430C-A9EA-11745A00E8B6}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{F26FF085-D45E-430C-A9EA-11745A00E8B6}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{DA0CB70E-6973-42FE-86CD-17B426432533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DA0CB70E-6973-42FE-86CD-17B426432533}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DA0CB70E-6973-42FE-86CD-17B426432533}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DA0CB70E-6973-42FE-86CD-17B426432533}.Release|Any CPU.Build.0 = Release|Any CPU
 		{49782EC9-9EBD-4F53-AE4B-EB22B68AF6B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{49782EC9-9EBD-4F53-AE4B-EB22B68AF6B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49782EC9-9EBD-4F53-AE4B-EB22B68AF6B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
