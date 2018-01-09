@@ -27,7 +27,7 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "The Home Page";
 
             return View();
         }
