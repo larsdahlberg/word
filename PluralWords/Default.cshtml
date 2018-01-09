@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "~/_SiteLayout.cshtml";
+    Page.Title = "Pluralize";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@Page.Title.</h1>
+
+            </hgroup>
+            <div class="jumbotron">
+                <h1>Pluralize</h1>
+            </div>
+            <p>
+
+                <input id="txtWord" type="text" width="100" placeholder="Type in word i.e. 'mouse'" />
+                <input id="btnPluralize" type="button" value="Pluralize..." />
+                <textarea id="txtPlural" rows="2" cols="200"></textarea>
+        </div>
+
+    </section>
+}
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(function () {
+           // LoadData();
+            $("#btnPluralize").click(function () {
+                var s = $("#txtWord").val();
+              //  alert("hello the word is " + s);
+                var p = 'the word ' + s + ' is ';
+                $(txtPlural).val(p);
+            })
+        })
+    </script>
+    }
