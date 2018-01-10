@@ -33,13 +33,13 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public ActionResult Pluralize(string input, FormCollection collection)
+        public ActionResult Pluralize( FormCollection collection)
         {
 
-            switch (input)
-            {
-                case "Pluralize":
-                    // do some stuff...
+            //switch (input)
+            //{
+            //    case "Pluralize":
+            //        // do some stuff...
                     ViewBag.Title = "Home Page";
 
                     string plural = Request["txtWord"];
@@ -47,26 +47,42 @@ namespace WebApplication1.Controllers
 
                     var s = plural.ToPlural();
                     ViewBag.Plural = s;
-                    break;
-                case "Create Account":
+            //     break;
+            // case "Create Account":
 
-                    break;
+            //     break;
 
-               default:
-                     ViewBag.Title = "Home Page";
+            //default:
+            //      ViewBag.Title = "Home Page";
 
-                     plural = Request["txtWord"];
+            //      plural = Request["txtWord"];
 
 
-                     s = plural.ToPlural();
-                    ViewBag.Plural = s;
-                    break;
-                    // do some other stuff...
-                    break;
+            //      s = plural.ToPlural();
+            //     ViewBag.Plural = s;
+            //     break;
+            //     // do some other stuff...
+            //break;
+            // }
+            if (Request.IsAjaxRequest())
+            {
+
+                try
+                {
+                    return Json(s);
+                }
+                catch (Exception e1)
+                {
+                    string s3 = e1.Message;
+                    return Json(s3);
+                }
             }
-          
+            else
+            {
+                return  View("Index");
+            }
+
             
-            return View("Index");
         }
 
       

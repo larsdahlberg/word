@@ -25,7 +25,7 @@
         <div class="content-wrapper">
             <h2>Introduction</h2>
             <p>
-                This app uses MVC and Web API with Ajax built-in and Bootstrap styling for a responsive web-site that looks good on smartphones as well as desktop PCs 
+                This app uses MVC and Web API with Bootstrap styling for a responsive web-site that looks good on smartphones as well as desktop PCs 
             </p>
         </div>
     </section>
@@ -36,3 +36,24 @@
         }
     </section>
 </div>
+<script>
+
+    $('#btnChangePrice').click(function () {
+        var idVal = $('#txtId').val();
+        var newPriceVal = $('#txtPrice').val();
+        $.ajax({
+            url: '/Home/ChangeProductPrice',
+            contentType: 'application/html; charset=utf-8',
+            data: { id: idVal, newPrice: newPriceVal },
+            type: 'GET',
+            dataType: 'html'
+
+        })
+            .success(function (result) {
+                $('#products').html(result);
+            })
+            .error(function (xhr, status) {
+                alert(status);
+            })
+    });
+</script>

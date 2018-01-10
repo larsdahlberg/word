@@ -1,5 +1,84 @@
 ﻿
-   
+
+@section Scripts
+{
+<script type="text/javascript">
+
+
+    $(function () {
+    $("#button").click(function () {
+    alert('button clicked');
+    }
+    );
+    });
+
+    $(document).ready(function () {
+
+        $('zzzform').submit(function () {
+            var serializedForm = $(this).serialize();
+            $.ajax({
+                url: '@Url.Action("Pluralize")',
+                type: "POST",
+                data: serializedForm,
+                success: function (result) {
+                    $("#txtPlurarl").text(result + " is the plural form");
+                   // alert("success " + result.data);
+                },
+                error: function (result) {
+                    alert("Failed");
+                }
+
+            });
+            return false;
+        });
+
+
+        //--------------AJax method#2----------------------------------
+
+        $("#btnPluralize").click(function () {
+           
+
+            var theWord = $("#txtWord").val();
+            alert("clicked" + theWord);//* * * Debug Lars
+
+            //$.post("Pluralize",
+            //    {
+            //        word: theWord
+            //    },
+            //    function (data, status) {
+            //        alert("Data: " + data + "\nStatus: " + status);
+            //        $("#txtPlurarl").text(data + " -Ajax method#2");
+
+
+
+            //    });
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("Pluralize")',
+               // data: theWord,
+
+                //   data: '{word: ' + JSON.stringify(theWord) + '}',
+                //  dataType: "json",
+                //  contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    alert("successfull");//* * * Debug Lars
+                    $('#txtPlural').text(result);
+                    // alert(status); //* * * Debug Lars
+                }
+                    .error(function (xhr, status) {
+                        alert(status);
+                    }
+            });
+            return false;
+        });
+    });
+
+
+  
+</script>
+}
+
 <div class="jumbotron">
     <h1>Pluralize</h1>
 </div>
@@ -7,8 +86,9 @@
     @using (Html.BeginForm("Pluralize", "Home", FormMethod.Post))
     {
         <input id="txtWord" name="txtWord" type="text" width="100" placeholder="Type in word i.e. 'mouse'" />
-   <input id="btnPluralize"  type="submit" value="Pluralize"   />
-    <textarea id="txtPlural" rows="2" cols="200">@ViewBag.Plural</textarea>
+        <input id="btnPluralize" name="btnPluralize" type="submit" value="Pluralize" />
+        <textarea id="txtPlural" rows="2" cols="200">@ViewBag.Plural</textarea>
+     //   <div id="button">Ajax Test button...</div>
 
         //Html.ActionLink("Pluralize...",
         //            "Home",  // <-- Controller Name.
